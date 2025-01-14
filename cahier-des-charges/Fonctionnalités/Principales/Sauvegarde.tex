@@ -1,0 +1,38 @@
+\fonction{Sauvegarde}
+{
+    L'application sauvegarde de nombreux éléments afin que le joueur puisse quitter et revenir sans perdre sa progression dans les différents modes de jeux.
+    \begin{itemize}
+        \item \subfonction{Grille}
+            {La progression sur la complétion des grilles est sauvegardée}
+            {
+                Lors d'une partie, l'application sauvegarde tous ce qui permettra au joueur de reprendre sa partie là où il en était. La sauvegarde étant automatique, l'utilisateur peut quitter une partie à tout moment sans se préoccuper de conserver sa progression. Des informations complémentaires à la grille sont sauvegardés tels que :
+                \noexpand\begin{itemize}
+                    \noexpand\item L'historique des coups joués pour permettre les retours en arrière
+                    \noexpand\item Le score actuel de la partie
+                    \noexpand\item L'aide des combinaisons possibles déjà activée ou non
+                \noexpand\end{itemize}
+                Il peut y avoir plusieurs sauvegardes pour chaque mode de jeu.
+                Certains modes de jeux ont un système de sauvegarde différent. Concernant la campagne, la progression est sauvegardée mais une seule sauvegarde est possible pour chaque niveau. Le joueur reprendra automatiquement la partie précédente puisque le niveau reste le même contrairement au mode de jeu classique où il peut y avoir différentes grilles.
+                \\
+                La sauvegarde n'est pas disponible pour le mode de jeu SpeedRun. Il s'agit d'un mode de jeu demandant de compléter une grille le plus rapidement possible, quitter une partie pour la reprendre plus tard fait perdre tout le sens du mode.
+            }
+        \item \subfonction{Options}
+            {Les options choisit par l'utilisateur sont sauvegardées.}
+            {
+                Toutes les modifications faites dans les options du jeu sont sauvegardées sur le profil, évitant ainsi de modifier à nouveau lors d'une connexion ultérieure.
+            }
+        \item \subfonction{Autres}
+            {D'autres données sont également sauvegardés}
+            {
+                D'autres données sont également sauvegardées pour chaque utilisateur:
+                \noexpand\begin{itemize}
+                    \noexpand\item Le temps total d'utilisation.
+                    \noexpand\item Les fenêtres déjà visitées comme le tutoriel pour ne pas répéter les introductions à la découverte d'un nouveau mode de jeu par exemple.
+                \noexpand\end{itemize}
+            }
+    \end{itemize}
+    Toutes les sauvegardes sont liés aux profils.
+}
+{
+    La sauvegarde est une fonctionnalité très importante pour un jeu comme le Kakuro, elle permet de conserver les avancées, assurant ainsi que les joueurs puissent reprendre leur partie là où ils l'avaient laissée lors des futures sessions.
+}

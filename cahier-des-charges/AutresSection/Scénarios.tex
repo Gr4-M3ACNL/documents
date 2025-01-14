@@ -1,0 +1,46 @@
+\newpage
+\wPt\vspace{-2.6cm}
+\section{Scénario d’utilisation}
+\newcommand{\perso}[1][ ]{Robert#1}
+\mdfsetup{%
+   middlelinecolor=red,
+   middlelinewidth=2pt,
+   backgroundcolor=MGCinColor!10,
+   roundcorner=10cm
+}
+\begin{mdframed}%{15cm}
+    Pour le déroulement de ce scénario d'utilisation, nous allons suivre \perso[,] un ami des développeurs qui tente le jeu pour la première fois et qui n’a jamais joué à un jeu de réflexion auparavant.\\
+
+    \perso se crée un profil utilisateur, puis le tutoriel apparaît et \perso apprend les règles du Kakuro sur une petite grille d'initiation.
+    Une fois terminé, la page d'accueil se lance, \perso clique sur \bouton{Jouer}.\\
+    Plusieurs modes de jeu lui sont alors proposés :
+    \begin{itemize}
+        \item Campagne
+        \item Partie Classique
+        \item Pixel Art
+        \item SpeedRun
+    \end{itemize}
+    \perso lance le mode \bouton{Campagne} et choisit par défaut le premier niveau étant donné que c'est sa première partie.\\
+    Il arrive alors sur une grille de Kakuro de 6 x 6 cases. Malgré le fait que \perso connaisse les règles grâce au tutoriel, il ne sait pas par où commencer pour remplir la grille. Il clique alors sur le bouton d'aide symbolisé par une ampoule allumée. Il obtient l'aide : "L'intersection entre trois sur deux cases et quatre sur deux cases ne peut être remplie que par un seul chiffre possible, vous pouvez ensuite remplir les autres cases avec les chiffres restants".\\
+    \perso commence à remplir certaines cases, et en s'aidant des indications fournies par le jeu au fur à mesure de son avancement il parvient à compléter la grille.\\
+
+    Se sentant en confiance, \perso décide de passer directement au niveau de difficulté supérieur.
+    Il revient au menu de sélection du mode de jeu et choisit donc de faire une \bouton{Partie Classique}. \\
+    Il lui est proposé de choisir la difficulté, de voir plus d'options ou de lancer la partie.\\
+    \perso choisis la difficulté \bouton{Moyen} et lance le jeu sans même regarder les autres options disponibles.\\
+    Grâce à l'expérience accumulée sur le mode campagne, il commence à remplir quelques cases, mais se retrouve vite bloqué et malgré les aides, il n'arrive plus à avancer.\\
+
+    \perso se résout alors à quitter sa partie classique qu'il pourra reprendre plus tard grâce au système de sauvegarde. \perso teste un mode de jeu plus reposant et artistique : le Pixel Art. Il est très heureux de voir l'image se compléter au fur et à mesure qu'il résout le puzzle.\\
+
+    
+
+    Après avoir complété son image, \perso se met en tête de défier le meilleur score de son ami dans le mode SpeedRun. Cependant, il ne sait pas vraiment comment ce mode de jeu se déroule et revient sur le menu principal et clique sur le bouton \bouton{Comment jouer} et se retrouve sur un nouveau menu :
+     \begin{itemize}
+         \item Règles du Kakuro
+         \item Interface de jeu
+         \item Astuces du Kakuro
+         \item Explications des modes de jeu
+         \item Retour à l'accueil
+     \end{itemize}
+     Après avoir pris connaissance des modalités du mode SpeedRun, \perso lance la partie en mode \bouton{Facile}. Faisant tout son possible et usant des techniques apprises durant ses parties, \perso termine le niveau en un temps record. Après avoir fini de jouer, \perso consulte le \bouton{Classement} où il voit son nom trônant fièrement en première place du classement.
+\end{mdframed}

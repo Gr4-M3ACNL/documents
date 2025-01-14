@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% PROPOSITION %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\wPt\hspace{0.02cm}\fonction{Navigation et saisie}
+{
+    Proposer différents modes de saisie permet au joueur de s'adapter comme bon lui semble.
+    \begin{itemize}
+        \item \subfonction{Saisie classique}
+            {Permet à l'utilisateur de saisir une valeur.}
+            {
+                Lorsqu'une valeur est saisie dans une case, cette valeur occupe toute la case.
+            }
+        \item \subfonction{Saisie de note}
+            {Permet à l'utilisateur de saisir des notes dans des cases.}
+            {
+                Les notes sont les valeurs hypothétiques d'une case que le joueur peut choisir. Elles permettent de garder en mémoire les suppositions, non-définitives, d'une case.\\
+                Lorsqu'une valeur est saisie en tant que note, cette valeur est réduite à une taille minimale dans la case.\\
+                Les 9 chiffres peuvent être présents dans une note, mais les chiffres tels que ceux déjà présent sur la ligne ou colonne seront grisés.
+                Lorsqu'une valeur est insérée dans la case, les notes seront masquées mais elles réapparaîtront si la valeur est supprimée ultérieurement.
+            }
+    \end{itemize}
+    Il y a plusieurs façons de naviguer dans la grille et d'y saisir des valeurs :
+    \begin{itemize}
+        \item \subfonction{Navigation par clavier}
+            {
+                \begin{description}
+                    \item[La navigation :] Les flèches directionnelles permettent de se déplacer de case en case.
+                    \item[La saisie :] Presser une touche sur le clavier numérique insère la valeur dans la case sélectionnée.
+                \end{description}
+            }
+            {
+                Comment utiliser le clavier :
+                \noexpand\begin{description}
+                    \noexpand\item[La navigation :] Les flèches directionnelles permettent de se déplacer de case en case.
+                    \noexpand\item[La saisie :]
+                        Presser une touche sur le clavier numérique insère la valeur dans la case sélectionnée.\\
+                        En appuyant sur une lettre, sa commande est active :\\
+                        \noexpand\begin{tabular}{@{— '}c@{' : }l}
+                            $\leftarrow$ & Supprime le contenu de la case sélectionnée.\\
+                            N & Désactive/Active le mode note. \\
+                            R & Réinitialise la grille. \\
+                            C & Vérifie les erreurs.\\
+                            A & Demande une aide.\\
+                            Z & Annule le dernier coup.\\
+                            Y & Rétablit le dernier coup annulé.
+                        \noexpand\end{tabular}
+                        L'entièreté de ces associations de touches resterons modifiables dans les options.
+                        \\\\
+                        L'utilisateur pourra modifier les touches dans les options.
+                \noexpand\end{description}
+            }
+        \item \subfonction{Navigation par souris}
+            {
+                \begin{description}
+                    \item[La navigation :] Sélection de la case par un simple clic avec la souris.
+                    \item[La saisie :] Cliquer sur une case puis sélectionner un chiffre sur la clavier virtuel flottant.
+                \end{description}
+            }
+            {
+                Comment utiliser la souris :
+                \noexpand\begin{description}
+                    \noexpand\item[La navigation :] Sélectionne la case par un simple clic avec la souris.
+                    \noexpand\item[La saisie :]
+                        Lorsque l'utilisateur clique sur une case, un clavier virtuel apparraît au-dessus du curseur et permet la saisie d'une valeur dans la cellule en-dessous du curseur.\\
+                        Il est possible de faire toutes les commandes du mode clavier en cliquant sur le bouton correspondant.
+                \noexpand\end{description}
+            }
+	\end{itemize}
+}
+{
+    L'application propose deux manières d'intéragir avec le jeu, que ce soit au clavier ou à la souris, pour permettre à l'utilisateur d'intégrer facilement les déplacements et les saisies selon ses préférences.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% ANCIENNE VERSION %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\/*
+\fonction{Navigation et saisie}
+{
+    La navigation sur la grille et la saisie des chiffres dans les cases.
+    \begin{itemize}
+        \item À la souris.
+        \item Au clavier.
+    \end{itemize}
+}
+{
+    Définit comment l'utilisateur fait pour entrer de nouvelles valeurs dans la case de son choix, à l'intérieur de la grille :
+    \noexpand\begin{description}
+        \noexpand\item[Clavier :]
+            La navigation sur la grille se fait grâce aux flèches directionnelles.
+            \\
+            La saisie s'effectue en déplaçant la zone de sélection sur une case modifiable. L'insertion d'un chiffre se fait directement en tapant sur la touche du chiffre souhaité. L'insertion d'un ou plusieurs chiffres sous la forme de notes se fait en tapant sur la touche 'N', en tapant les chiffres souhaités et finalement on termine l'insertion en retapant sur la touche 'N' ou bien en se déplaçant hors de la case.
+            \\
+            Il est également possible de vider une case en appuyant sur la touche 'R'.
+        \noexpand\item[Souris :]
+            La navigation sur la grille se réalise en déplaçant la souris sur la case souhaitée.
+            \\
+            L'insertion de chiffres s'effectue à l'aide d'un clic gauche sur une case, faisant apparaître un pop-up composée des chiffres de 1 à 9 et d'un bouton pour vider la case.
+            \\
+            L'insertion de notes s'effectue à l'aide d'un clic droit sur une case, faisant apparaître la même pop-up. 
+            \\
+            Dans les 2 cas, les chiffres contenus dans les notes se grisent automatiquement lorsqu'ils sont entrés dans une autre case de la ligne/colonne.
+    \noexpand\end{description}
+}
+*/

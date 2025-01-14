@@ -1,0 +1,24 @@
+\fonction{Système d'aides}
+{
+    Les différentes aides disponibles au cours d'une partie.
+    \begin{itemize}
+		\item \subfonction{Vérification des erreurs} % nom de l'aide
+                {Vérifie si la grille est correcte} % petite description
+                {  % grande description
+                    Pour cette aide, deux niveaux d'aide sont à disposition du joueur. Lors de la demande de l'aide, une fenêtre apparaît avec le nombre d'erreurs sur la grille. Si il y en a, il est proposé au joueur de revenir sur la dernière grille correcte, ce qui retirera tout les coups joué depuis la première erreur, y compris des potentiels bons chiffres.
+                } 
+		\item \subfonction{Affichage des combinaisons possibles}
+                {Affiche les combinaisons possibles de la ligne ou de la colonne en survolant le résultat associé}
+                {
+                    Une fois cette aide activée , elle permet d'afficher toutes les combinaisons possible sur une ligne ou une colonne pour un résultat donné. Il suffit de survoler le résultat de la ligne ou de la colonne pour afficher cette aide.
+                }
+            \item \subfonction{Indice technique}
+                {Donne une proposition de stratégie applicable}
+                {
+                    Cette aide est décomposée en 2 étapes comme la vérification des erreurs. Tout d'abord l'aide propose une technique de jeu applicable sur la grille en question. Toutes les informations sur la technique en question correspondent avec les valeurs de la grille du joueur. En plus de ces informations, le joueur peut demander une seconde aide qui cette fois, affiche la ou les cases sur lesquelles la technique peut s'appliquer ce qui offre une aide considérable.
+                }
+	\end{itemize}
+}
+{
+Les aides sont la principale fonctionnalité dans ce projet. Elles doivent guider le joueur en donnant des indices sur la grille de Kakuro. Voici les aides qui seront implémentées :
+}

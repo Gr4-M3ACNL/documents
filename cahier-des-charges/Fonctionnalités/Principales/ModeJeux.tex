@@ -1,0 +1,60 @@
+\fonction{Modes de jeux}
+{
+	Différents modes de jeux disponibles.
+	\begin{itemize}
+		\item \subfonction{Campagne}
+			{Série de grille en difficulté progressive}
+			{
+                Le mode campagne du jeu propose au joueur une série de niveaux progressifs et stimulants. Chaque niveau présente des grilles de plus en plus complexes. L'objectif est de permettre au joueur de relever le défi de chaque niveau et de progresser à travers une série de puzzles aux niveaux variés.
+                \noexpand\begin{description}
+                    \noexpand\item[Niveaux :]
+                        Le mode campagne est divisé en une série de niveaux, chaque niveau étant représenté par une grille unique.
+                    \noexpand\item[Difficulté Progressive :]
+                        Les niveaux augmentent en difficulté au fur et à mesure que le joueur progresse.
+                        Le joueur doit terminer un niveau pour passer au suivant.
+                        \\
+                        Certains niveaux seront spéciaux et seront des modes de jeux différents comme le Pixel Art ou le SpeedRun.
+                        \\
+                        Le système de points est intégré à la campagne ainsi qu'un palier de réussite sous forme d'étoile pour chaque niveau. L'objectif ultime serait donc d'obtenir 3 étoiles sur tous les niveaux. Il est possible de revenir sur des anciens niveaux afin d'obtenir un meilleur score.
+                \noexpand\end{description}
+            }
+
+        \item \subfonction{Partie Classique}
+            {Partie standard avec des paramètres modifiables}
+            {
+                Mode de jeu classique sans fonctionnalité supplémentaire, plusieurs paramètres sont modifiables pour répondre aux besoins de l'utilisateur, les paramètres prédéfinis tel que la difficulté de la grille ou les paramètres avancés comme la taille de la grille et l'activation du mode sans aide. Ces paramètres sont modifiables par le joueur lors de la création d'une nouvelle partie.
+                \noexpand\begin{description}
+                    \noexpand\item[Difficulté :]
+                        Le joueur peut choisir entre le niveau Facile, Normal ou Difficile.
+                    \noexpand\item[Taille de la grille :]
+                        Plusieurs tailles de grilles seront disponibles en fonction de la difficulté choisie.
+                    \noexpand\item[Mode sans aide :] 
+                        Permet au joueur de retirer toutes les formes d'aide pour éviter toute tentation.
+                \noexpand\end{description}
+            }
+
+        \item \subfonction{Mode PixelArt}
+            {Fusion du pixel art avec le Kakuro}
+            {
+                Mode de jeu interactif permettant de réaliser un pixel art pendant la complétion de la grille.
+                \\
+                Lorsqu'un utilisateur lance une partie avec ce mode de jeu, il doit tout d'abord sélectionner un pixel art, aléatoire par défaut, parmi une librairie de plusieurs pixel arts dont la taille de celui-ci est indiquée. Les images sont choisies préalablement pour correspondre proprement à un pixel art d'une taille maximum de 50 x 50.
+                En arrivant sur la grille, les carrés habituellement noirs sont maintenant colorés.
+                Chaque fois que l'utilisateur saisira une valeur dans la grille, le carré sera alors à son tour coloré, de la bonne couleur du pixel si la valeur est bonne, d'une autre couleur sinon.
+                \\
+                Une fois la grille entièrement complétée et correcte, l'utilisateur verra alors l'image finale.
+                \\
+                Le PixelArt est un mode de jeu tranquille, sans points, sans limite de temps et avec toutes les aides accessible.
+            }
+        \item \subfonction{Mode SpeedRun}
+            {Variante de la partie Classique ayant pour but de finir une grille prédéfinie le plus rapidement possible}
+            {
+                Le mode de jeu SpeedRun est un mode de jeu plutôt restreint mais plus compétitif. En effet le joueur ne peut pas choisir de difficulté pour sa partie ainsi que la taille de la grille. L'objectif pour le joueur est de finir la grille le plus rapidement possible en toute autonomie. Le joueur peut avoir accès aux aides mais l'utilisation de celles-ci est pénalisant. Chaque aide utilisée rajoutera du temps au chronomètre proportionnellement à l'assistance qu'elle apporte.
+                
+            }
+	\end{itemize}
+}
+{
+Intégrer plusieurs modes de jeux est primordial pour créer une diversité de gameplay pour les joueurs.\\
+Voici les modes de jeux qui seront disponibles :
+}
