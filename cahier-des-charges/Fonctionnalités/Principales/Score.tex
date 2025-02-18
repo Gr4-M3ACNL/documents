@@ -1,39 +1,22 @@
 \fonction{Score}
 {
-    Le système de points vise à instaurer une compétition autant qu’à soi même que entre les joueurs, tout en
-    offrant une mesure de leur performance.
+    Le score d'une partie correspond à son chronomètre, c'est à dire le temps que le joueur a mis pour résoudre la grille avec des pénalités liées aux aides utilisées.
 }
 {
-    Le système de points vise à instaurer une compétition autant qu'à soi même que entre les joueurs, tout en offrant une mesure de leur performance. Le score sera attribué en fonction des décisions prises pendant le jeu, notamment l'utilisation d'aides, et servira de base pour déterminer le niveau de réussite du joueur à la fin de la partie.
+    Le score vise à instaurer une compétition autant à soi-même qu'entre les joueurs, tout en offrant une mesure de leurs performances. Le score sera attribué en fonction des décisions prises pendant le jeu, notamment l'utilisation d'aides.
     \\
     \\
-    Le joueur entamera une partie avec un score initial de 100 points.
-    L'utilisation d'aides pendant le jeu entraînera une diminution du score. Plus le joueur aura recours à des indices ou à d'autres formes d'aide, plus son score sera réduit. Cela encourage le joueur à résoudre le puzzle de manière autonome pour maximiser son score. Le temps n'a aucune influence sur le score d'une partie.
-    \\
-    \\
-    À la fin d'une partie, le score obtenu par le joueur sera converti en un nombre d'étoiles : Un score de 100 points correspondrait à 3 étoiles, tandis qu'un score inférieur pourrait se traduire par un nombre d'étoiles réduit.
+    L'utilisation d'aides pendant le jeu entraînera une augmentation du score. Plus le joueur aura recours à des indices ou à d'autres formes d'aide, plus son chronomètre se verra pénalisé par des malus. Cela encourage le joueur à résoudre le puzzle de façon autonome et optimale pour maximiser son score.
     \\
     \\
     Points réduits en fonction des aides :
     \noexpand\begin{itemize}[label=$\Rightarrow$]
         \noexpand\item Vérification des erreurs :
             \noexpand\begin{itemize}
-                \noexpand\item Indication du nombre d'erreurs : 5 points
-                \noexpand\item Retour à la bonne sauvegarde : 10 points
-            \noexpand\end{itemize}
-        \noexpand\item Aide technique :
-            \noexpand\begin{itemize}
-                \noexpand\item Indication d'une technique de résolution : 5 points
-                \noexpand\item Indication de la case associée : 15 points
-            \noexpand\end{itemize}
-        \noexpand\item Affichage des combinaisons possibles : 5 points.\\
-        Pour utiliser cette aide, le joueur doit payer le coût une seule fois. L'aide peut être désactivée et ne nécessitera pas de repayer le coût pour la réactiver. 
-        \noexpand\item Distribution des étoiles en fin de partie :
-            \noexpand\begin{itemize}
-                \noexpand\item 100 points : 3 étoiles
-                \noexpand\item 65 - 99 points : 2 étoiles
-                \noexpand\item 30 - 64 points : 1 étoile
-                \noexpand\item < 30 points : Aucune étoile
+                \noexpand\item Demande d'aide de niveau un (technique) : ajoute une seconde au chronomètre
+                \noexpand\item Demande d'aide de niveau deux (zone) : ajoute deux secondes au chronomètre
+                \noexpand\item Demande d'aide de niveau trois (nœuds concernés) : ajoute trois secondes au chronomètre
+                \noexpand\item Retour au checkpoint (mode hypothèse) : le chronomètre n'est pas affecté
             \noexpand\end{itemize}
     \noexpand\end{itemize}
 }

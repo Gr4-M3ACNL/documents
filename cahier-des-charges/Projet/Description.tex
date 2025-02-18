@@ -1,7 +1,11 @@
 \subsection{Description du jeu}
-Le Kakuro est un jeu de puzzle dans lequel le joueur doit placer des chiffres dans une grille. Il se joue sur une grille carrée ou rectangulaire, divisée en cases blanches et noires. L'objectif est de remplir chaque case blanche avec un chiffre de 1 à 9, de manière à respecter deux règles principales :
+Le puzzle Hashi se présente comme une grille carrée d'îles, dans notre cas représentées par des hachis parmentier, contenant chacune un numéro. 
+L'objectif du Hashi est de connecter les îles avec des ponts de manière à respecter quatre règles :
 \begin{itemize}
-\item \textbf{Somme des chiffres} : Chaque ligne ou colonne formée par des cases blanches doit avoir une somme spécifiée, indiquée par un chiffre dans la case noire correspondante.
-\item \textbf{Unicité des chiffres} : Les chiffres doivent être uniques dans chaque ligne et colonne.
+\item \textbf{Solution} : Il doit y avoir un chemin continu parcourant toutes les îles.
+\item \textbf{Nombre de ponts} : Il ne peut y avoir plus de deux ponts entre deux îles et le numéro d'une île, correspondant au nombre de ponts qui la relient avec d'autres îles, doit être respecté.
+\item \textbf{Orientation des ponts} : Les ponts doivent être horizontaux ou verticaux.
+\item \textbf{Croisements} :  Les ponts ne peuvent pas se croiser.
 \end{itemize}
-Les cases noires, hormis les cases contenants le résultat de la ligne ou de la colonne, ne contiennent pas de chiffres et servent uniquement à délimiter les régions. Les joueurs résolvent le puzzle en utilisant la logique et en appliquant des règles mathématiques pour déterminer quels chiffres conviennent dans chaque case. Le Kakuro est un jeu stimulant qui exige de la réflexion et de la résolution de problèmes pour parvenir à une solution unique et correcte.
+Chaque puzzle possède une et une seule solution. Pour relier deux îles, il faut appuyer entre deux îles. Pour supprimer un pont, il suffit de cliquer deux fois entre deux îles, puisqu'un clic correspond à un pont, deux clics à deux ponts (maximum) et le troisième remet à zéro le nombre de ponts.
+Il est possible de mettre en surbrillance les îles connectées d'une île en cliquant sur cette île avec la souris. Il est également possible de voir sur quelle(s) île(s) vous pouvez vous connecter en survolant l’île concernée. 

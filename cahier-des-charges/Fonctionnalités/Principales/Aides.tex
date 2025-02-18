@@ -5,20 +5,26 @@
 		\item \subfonction{Vérification des erreurs} % nom de l'aide
                 {Vérifie si la grille est correcte} % petite description
                 {  % grande description
-                    Pour cette aide, deux niveaux d'aide sont à disposition du joueur. Lors de la demande de l'aide, une fenêtre apparaît avec le nombre d'erreurs sur la grille. Si il y en a, il est proposé au joueur de revenir sur la dernière grille correcte, ce qui retirera tout les coups joué depuis la première erreur, y compris des potentiels bons chiffres.
+                    Pour cette aide, deux niveaux d'aide sont à disposition du joueur. Lors de la demande de l'aide, une fenêtre apparaît avec le nombre d'erreurs sur la grille. S'il y en a, il est proposé au joueur de revenir sur la dernière grille correcte, ce qui retirera tous les coups joué depuis la première erreur, y compris des potentiels bons chiffres.
                 } 
-		\item \subfonction{Affichage des combinaisons possibles}
-                {Affiche les combinaisons possibles de la ligne ou de la colonne en survolant le résultat associé}
+		\item \subfonction{Affichage des ponts possibles au survol}
+                {Affiche les ponts possibles au survol d'une île par la souris}
                 {
-                    Une fois cette aide activée , elle permet d'afficher toutes les combinaisons possible sur une ligne ou une colonne pour un résultat donné. Il suffit de survoler le résultat de la ligne ou de la colonne pour afficher cette aide.
+                    Au survol d'une île par la souris du joueur, l'aide affiche les ponts possibles, c'est-à-dire les ponts partant de l'île survolée qui peuvent être posés.
                 }
             \item \subfonction{Indice technique}
                 {Donne une proposition de stratégie applicable}
                 {
-                    Cette aide est décomposée en 2 étapes comme la vérification des erreurs. Tout d'abord l'aide propose une technique de jeu applicable sur la grille en question. Toutes les informations sur la technique en question correspondent avec les valeurs de la grille du joueur. En plus de ces informations, le joueur peut demander une seconde aide qui cette fois, affiche la ou les cases sur lesquelles la technique peut s'appliquer ce qui offre une aide considérable.
+                    Cette aide est décomposée en deux étapes comme la vérification des erreurs. Tout d'abord l'aide propose une technique de jeu applicable sur la grille en question. Le clic du joueur sur le bouton d'indice technique fait apparaître une infobulle comportant un indice basé sur la grille actuelle du joueur.
                 }
+                \item\subfonction{Affichage du réseau d'une île}
+                    {Permet d'afficher le réseau d'une île: toutes les îles auxquelles elle peut accéder.}
+                    {
+                        En cliquant sur une île, son réseau est affiché. Le réseau d'une île est composé de toutes les îles ayant un chemin permettant d'y accéder.
+                    }
+                    
 	\end{itemize}
 }
 {
-Les aides sont la principale fonctionnalité dans ce projet. Elles doivent guider le joueur en donnant des indices sur la grille de Kakuro. Voici les aides qui seront implémentées :
+Les aides sont la principale fonctionnalité dans ce projet. Elles doivent guider le joueur en donnant des indices sur sa grille de Hashi. Voici les aides qui seront implémentées :
 }

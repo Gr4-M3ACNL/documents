@@ -1,46 +1,65 @@
 \newpage
 \wPt\vspace{-2.6cm}
 \section{Scénario d’utilisation}
-\newcommand{\perso}[1][ ]{Robert#1}
 \mdfsetup{%
-   middlelinecolor=red,
+   middlelinecolor=blue,
    middlelinewidth=2pt,
    backgroundcolor=MGCinColor!10,
    roundcorner=10cm
 }
-\begin{mdframed}%{15cm}
-    Pour le déroulement de ce scénario d'utilisation, nous allons suivre \perso[,] un ami des développeurs qui tente le jeu pour la première fois et qui n’a jamais joué à un jeu de réflexion auparavant.\\
+\begin{mdframed}
+Pour le déroulement de ce premier scénario d'utilisation, nous allons suivre \textbf{Patrick}, un ami des développeurs qui découvre le jeu pour la première fois et qui n'a jamais joué à un jeu sur ordinateur et n'est donc pas familier avec ce type d'interface.\\
 
-    \perso se crée un profil utilisateur, puis le tutoriel apparaît et \perso apprend les règles du Kakuro sur une petite grille d'initiation.
-    Une fois terminé, la page d'accueil se lance, \perso clique sur \bouton{Jouer}.\\
-    Plusieurs modes de jeu lui sont alors proposés :
-    \begin{itemize}
-        \item Campagne
-        \item Partie Classique
-        \item Pixel Art
-        \item SpeedRun
-    \end{itemize}
-    \perso lance le mode \bouton{Campagne} et choisit par défaut le premier niveau étant donné que c'est sa première partie.\\
-    Il arrive alors sur une grille de Kakuro de 6 x 6 cases. Malgré le fait que \perso connaisse les règles grâce au tutoriel, il ne sait pas par où commencer pour remplir la grille. Il clique alors sur le bouton d'aide symbolisé par une ampoule allumée. Il obtient l'aide : "L'intersection entre trois sur deux cases et quatre sur deux cases ne peut être remplie que par un seul chiffre possible, vous pouvez ensuite remplir les autres cases avec les chiffres restants".\\
-    \perso commence à remplir certaines cases, et en s'aidant des indications fournies par le jeu au fur à mesure de son avancement il parvient à compléter la grille.\\
-
-    Se sentant en confiance, \perso décide de passer directement au niveau de difficulté supérieur.
-    Il revient au menu de sélection du mode de jeu et choisit donc de faire une \bouton{Partie Classique}. \\
-    Il lui est proposé de choisir la difficulté, de voir plus d'options ou de lancer la partie.\\
-    \perso choisis la difficulté \bouton{Moyen} et lance le jeu sans même regarder les autres options disponibles.\\
-    Grâce à l'expérience accumulée sur le mode campagne, il commence à remplir quelques cases, mais se retrouve vite bloqué et malgré les aides, il n'arrive plus à avancer.\\
-
-    \perso se résout alors à quitter sa partie classique qu'il pourra reprendre plus tard grâce au système de sauvegarde. \perso teste un mode de jeu plus reposant et artistique : le Pixel Art. Il est très heureux de voir l'image se compléter au fur et à mesure qu'il résout le puzzle.\\
-
+\textbf{Création du profil et tutoriel}  \\
+Patrick obtient les fichiers sources du jeu et exécute le fichier "\textit{groupe4.jar}". La page d’accueil de l'interface se lance et Patrick commence par créer un profil de joueur. Une fois cette étape terminée, le tutoriel se lance, permettant à Patrick de prendre connaissance des règles et des techniques du \textit{Hashi Parmentier} grâce à une petite grille d’initiation. Une fois les règles assimilées, la page d'accueil réapparaît. Patrick sélectionne le mode de jeu "\textbf{partie classique}", et se retrouve face à quatre niveaux de difficulté : Débutant, Moyen, Difficile et Expert.
     
+Il choisit la difficulté \textbf{Débutant} en commençant par défaut par le \textbf{premier niveau}, car il s’agit de sa toute première expérience d'\textit{Hashi Parmentier}.\\
 
-    Après avoir complété son image, \perso se met en tête de défier le meilleur score de son ami dans le mode SpeedRun. Cependant, il ne sait pas vraiment comment ce mode de jeu se déroule et revient sur le menu principal et clique sur le bouton \bouton{Comment jouer} et se retrouve sur un nouveau menu :
-     \begin{itemize}
-         \item Règles du Kakuro
-         \item Interface de jeu
-         \item Astuces du Kakuro
-         \item Explications des modes de jeu
-         \item Retour à l'accueil
-     \end{itemize}
-     Après avoir pris connaissance des modalités du mode SpeedRun, \perso lance la partie en mode \bouton{Facile}. Faisant tout son possible et usant des techniques apprises durant ses parties, \perso termine le niveau en un temps record. Après avoir fini de jouer, \perso consulte le \bouton{Classement} où il voit son nom trônant fièrement en première place du classement.
+\textbf{Premier niveau : découverte et aides}  \\
+Patrick se retrouve face à une grille de dimensions \textbf{7x7}. Bien qu’il ait suivi le tutoriel avec attention, il ne sait pas comment placer ses premiers ponts. Il utilise alors le \textbf{menu d'aide}.\\
+
+Il appuie sur le bouton d'\bouton{Aide} représenté par une ampoule. Le jeu lui propose d’appliquer le premier niveau d'aide et lui indique ainsi la technique de base "\textbf{Côté, 3 voisins et 5 ponts}" pour l’aider à démarrer. Comme il ne remarque pas à quel endroit l'aide fait référence, il demande une aide de niveau deux et le jeu affiche le coin en haut à droite. Ne comprenant toujours pas ce que le jeu avait vu et pas lui, il demande le troisième et dernier niveau d'aide et le jeu lui indique alors l'île concernée. En suivant ces instructions, Patrick parvient à compléter la grille sans trop de difficulté et un message de félicitations lui est adressé par le jeu, en affichant également son score.\\
+
+\textbf{Menu de fin de partie}  \\
+À la fin du niveau, plusieurs choix s’offrent à lui :
+\begin{itemize}
+    \item Retourner à la page d’accueil,
+    \item Quitter l’application,
+    \item Afficher son temps de résolution, et donc son score,
+    \item Changer de difficulté.
+\end{itemize}
+
+\textbf{Passage à un niveau de difficulté moyenne}  \\
+Après avoir terminé quelques niveaux supplémentaires, Patrick décide d’augmenter la difficulté à la fin du dernier niveau effectué. Il clique sur le bouton \bouton{Changer de difficulté} et choisit la difficulté moyenne et commence un nouveau niveau. Au cours de ce dernier, il pose un checkpoint pour entre dans le "mode hypothèse" et essaye une combinaison de ponts mais se retrouve bloqué, il revient ainsi à son checkpoint et peut donc reprendre sans problème. Fort de son expérience des niveaux débutants, Patrick remplit plusieurs cases. Cependant, il se lasse rapidement des \textbf{effets sonores} générés lorsqu’il clique sur les éléments du jeu. Pour y remédier, il clique sur le boutons \textbf{menu des options}, situé dans le coin supérieur droit. Ainsi, il peut diminuer et même couper le son des effets sonores et découvre les autres options.\\
+
+\textbf{Navigation et exploration des options} 
+\begin{itemize}
+    \item Choix du mode d'affichage : fenêtré ou plein écran
+    \item Restriction des aides : ne plus utiliser les aides de niveau trois ou deux et trois ou même aucune aide.
+    \item Contrôle des effets sonores
+\end{itemize}
+\textbf{Blocage et système de sauvegarde}  \\
+Appréciant le calme, Patrick reprend sa partie mais finit par se retrouver bloqué. Ne souhaitant pas utiliser davantage d’aides, il décide de \textbf{quitter la partie}. Grâce au système de \textbf{sauvegarde}, il pourra reprendre ce niveau ultérieurement.
+\end{mdframed}
+
+\mdfsetup{%
+   middlelinecolor=blue,
+   middlelinewidth=2pt,
+   backgroundcolor=MGCinColor!10,
+   roundcorner=10cm
+}
+\begin{mdframed}
+
+Pour le déroulement de ce deuxième scénario d'utilisation, nous allons suivre \textbf{Jérôme}, un autre ami des développeurs mais qui connaît déjà le jeu et a un bon niveau.\\
+
+\textbf{Création du profil et tutoriel}  \\
+Jérôme obtient les fichiers sources du jeu et exécute le \textit{groupe4.jar} contenu dans les dossiers. La page d'accueil se lance et Jérôme commence par créer un profil de joueur. Une fois cette étape terminée, le tutoriel se lance, mais comme il a déjà une bonne expérience du jeu, il le passe. La page d'accueil réapparaît ensuite. Jérôme sélectionne le mode de jeu "\textbf{partie classique}", et se retrouve face à quatre niveaux de difficulté : Débutant, Moyen, Difficile et Expert.
+    
+Il choisit la difficulté \textbf{Moyen} en commençant par défaut par le \textbf{premier niveau}.\\
+
+\textbf{Premier niveau : découverte de l'implémentation ?}  \\
+Patrick se retrouve face à une grille de dimensions \textbf{9x9}. Se rendant compte qu'il réussit à avancer avec aisance, il décide de réduire le niveau d'aide à un en passant par le menu d'options. Il utilise alors le \textbf{menu d'aide}, situé à droite, où se trouve le \textbf{menu d'options}.\\
+Après avoir effectué quelques niveaux de difficulté Moyen, il essaie les niveaux de difficulté Difficile.
+Il arrive à faire moins rapidement quelques niveaux mais panique un peu en arrivant au niveau cinq, il appuie alors de plus en plus sur le bouton d'\bouton{Aide}. Le jeu lui propose d’appliquer le premier niveau d'aide et lui indique ainsi la technique de base "\textbf{Coin, 2 voisins et 3 ponts}" pour l’aider à démarrer. Grâce à l'aide, il parvient à résoudre le puzzle sans trop de difficulté et donc sans trop perdre de temps et un message de félicitations lui est adressé par le jeu, en affichant également son score.\\
+
 \end{mdframed}

@@ -1,27 +1,55 @@
 \subsection{Exigences fonctionnelles}
-Les exigences fonctionnelles du projet se répartissent en plusieurs catégories, groupant divers aspects pour assurer la qualité et la diversité de l'expérience utilisateur.
 
-\paragraph{Exigences sur l'interface graphique}
+\begin{longtable}{|p{3.5cm}|p{12cm}|}
+\hline
+\textbf{Catégorie} & \textbf{Exigence Fonctionnelle} \\
+\hline
+\textbf{Interface \newline Graphique} & 
 \begin{itemize}
-    \item Permettre à l'utilisateur de naviguer à la souris comme au clavier.
-    \item Rendre l'application claire, intuitive et ergonomique en suivant les normes d'UI-UX design.
-    \item Faire des pages accessibles, facilitant un accès rapide aux grilles du jeu.
-    \item Assurer que les utilisateurs aient toujours la possibilité de retourner à la fenêtre précédente, au menu d'accueil, à la fenêtre d'options et aux règles du jeu.
-    \item Rendre l'application personnalisable en offrant plusieurs thèmes graphiques, permettant aux utilisateurs de choisir celui qui leur convient le mieux.
-\end{itemize}
-
-\paragraph{Exigences liées au jeu Kakuro}
+    \item Navigation intuitive (souris et clavier).
+    \item Interface claire, ergonomique.
+    \item Indicateur visuel pour les îles complétées.
+    \item Survol interactif : îles (ponts possibles) et liens (mise en surbrillance).
+    \item Menu principal avec accès aux grilles, aides, et paramètres.
+\end{itemize} \\
+\hline
+\textbf{Gameplay} & 
 \begin{itemize}
-    \item Créer des variantes au jeu en proposant plusieurs modes de jeu.
-    \item Adapter le niveau du jeu en fournissant plusieurs moyens d'apprendre à jouer, dont des explications des règles, des techniques de résolution, et un tutoriel.
-    \item Offrir des aides couvrant différentes notions telles que l'aide pour indiquer une technique de jeu applicable, la vérification des valeurs, et la signalisation des valeurs impossibles.
-    \item Laisser à l'utilisateur la possibilité de désactiver toutes ces formes d'aide.
-    \item Classer chaque grille comme 'facile', 'normal' ou 'difficile', permettant au joueur de choisir la difficulté au début de chaque partie.
-\end{itemize}
-
-\paragraph{Exigences annexes au logiciel}
+    \item Mode de jeu : classique, avec un score en fonction du temps de résolution.
+    \item Bouton "Check" pour valider si la grille actuelle est correcte (renvoie uniquement vrai ou faux).
+    \item Aide progressive adaptée (plus le joueur est en difficulté, plus les aides seront fortes et coûteuses).
+    \item Indicateurs dynamiques : connexions possibles et prévisualisation des réseaux continus.
+    \item Actions ergonomiques : clics successifs pour gérer les ponts (1 clic = 1 pont, 2 clics = 2 ponts, 3 clics = 0 ponts).
+    \item Boutons "Annuler" et "Rétablir" avec historique complet.
+    \item Réinitialisation rapide d’une grille (sans affecter le temps de jeu).
+\end{itemize} \\
+\hline
+\textbf{Difficulté \&  \newline Personnalisation} & 
 \begin{itemize}
-    \item Mettre en place une fonctionnalité de sauvegarde permettant de conserver les parties d'un joueur.
-    \item Autoriser l'existence de plusieurs profils, afin de permettre à plusieurs utilisateurs d'avoir leur propre aventure sur la même machine.
-    \item Comparer les joueurs entre eux en mettant en place des classements et des tableaux des records personnels.
-\end{itemize}
+    \item Niveaux de difficulté arbitraires : Débutant, Moyen, Difficile et Expert.
+    \item Grilles adaptées selon la difficulté.
+    \item Désactivation complète des aides au choix.
+    \item Système de profils pour préférences et progression individuelle.
+\end{itemize} \\
+\hline
+\textbf{Sauvegarde et \newline Technique} & 
+\begin{itemize}
+    \item Sauvegarde automatique avec : coups effectués, checkpoints, historique complet.
+    \item Vérification automatique de la validité de la grille une fois terminée.
+    \item Utilisation d'une banque de grilles.
+\end{itemize} \\
+\hline
+\textbf{Esthétique \& \newline Sonorisation} & 
+\begin{itemize}
+    \item Direction artistique libre (minimaliste ou thématique).
+    \item Effets sonores simples et désactivables (pas de musique).
+\end{itemize} \\
+\hline
+\textbf{Annexes} & 
+\begin{itemize}
+    \item Tutoriel interactif pour le premier lancement, rejouable depuis le menu principal.
+    \item Classement basé sur : temps de résolution, aides utilisées.
+    \item Pas de résolveur automatique (résolution manuelle obligatoire).
+\end{itemize} \\
+\hline
+\end{longtable}
