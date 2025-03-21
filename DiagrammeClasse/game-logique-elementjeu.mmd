@@ -1,0 +1,105 @@
+classDiagram
+direction TB
+    class Coord {
+	    - CoordX : int
+	    - coordY : int
+	    + Coord(px : int, py : int)
+	    + compareTo(co2 : Coord) : int
+	    + *@Override* toString() : String
+    }
+
+    class DoubleLien {
+	    - lien1 : Lien
+	    - lien2 : Lien
+	    - interrupteur : Boolean
+	    - lienBrillance : int
+	    - modifie : Boolean
+	    + DoubleLien(l1 : Lien, l2 : Lien)
+	    + *@Override* modifie() : Boolean
+	    + *@Override* verifie() : void
+	    + *@Override* averifie() : void
+	    + *@Override* activer() : Boolean
+	    + *@Override* activer(n : Noeud) : Boolean
+	    + *@Override* surbrillanceOn() : void
+	    + *@Override* surbrillanceOff() : void
+	    + *@Override* draw() : String
+	    + *@Override* drawTerm() : void
+	    + *@Override* toString() : String
+    }
+
+    class ElementJeu {
+        + modifie() : Boolean
+        + activer() : Boolean
+        + verifie() : void
+        + averifie() : void
+        + surbrillanceOn() : void
+        + surbrillanceOff() : void
+        + draw() : String
+        + drawTerm() : void
+    }
+
+    class Lien{
+        - jeu : Jeu
+        - noeud1 : Noeud
+        - noeud2 : Noeud
+        - nbLien : int
+        - nbLienSoluce : int
+        - surbrillance : Boolean
+        - orientation : int
+        - index : int
+        - modifie : Boolean
+        - cmptVerif : int
+        - cmptVerifMax : int
+        - listeDl : ArrayList[DoubleLien]
+        + Lien(n1 : Noeud,n2 : Noeud,sol : int,j : Jeu,orient : int)
+        + retourArriere() : void
+        + noeudDansLien(n : Noeud) : int
+        + remiseAzero() : void
+        + *@Override* modifie() : Boolean
+	    + *@Override* verifie() : void
+	    + *@Override* averifie() : void
+	    + *@Override* activer() : Boolean
+        + *@Override* surbrillanceOn() : void
+	    + *@Override* surbrillanceOff() : void
+	    + *@Override* draw() : String
+	    + *@Override* drawTerm() : void
+	    + *@Override* toString() : String
+
+    }
+
+    class Noeud{
+        - position : Coord
+        - degreSoluce : int
+        - degreActuelle : int
+        - listeAdjacence : ArrayList[Noeud]
+        - surbrillance : Boolean
+        - activer : Boolean
+        - modifie : Boolean
+        + Noeud(x : int, y : int, degS : int)
+        + ajouterDegre() : void
+        + suppressionDegre() : void
+        + diminuerDegre() : void
+        + ajouterNoeudAdjacence(n : Noeud) : void
+        + retirerNoeudAdjacence(n : Noeud) : void
+        + afficherReseau() : ArrayList[Noeud]
+        - afficherReseauRecursif(noeud : Noeud, visites : ArrayList[Noeud]) : void
+        + *@Override* modifie() : Boolean
+	    + *@Override* verifie() : void
+	    + *@Override* averifie() : void
+	    + *@Override* activer() : Boolean
+        + *@Override* surbrillanceOn() : void
+	    + *@Override* surbrillanceOff() : void
+        + *@Override* compareTo(n2 : Noeud) : int
+	    + *@Override* draw() : String
+	    + *@Override* drawTerm() : void
+	    + *@Override* toString() : String
+
+
+    }
+	<<Interface>> ElementJeu
+    Lien <|-- ElementJeu
+    Noeud <|-- ElementJeu
+    Lien <-- Noeud
+    DoubleLien <-- Lien
+    Noeud <-- Coord
+

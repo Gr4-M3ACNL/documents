@@ -1,0 +1,25 @@
+classDiagram
+direction TB
+    class Difficulte{
+        facile
+        moyen
+        difficile
+        expert
+    }
+    class Partie{
+        - jeu : Jeu
+        - chrono : Instant
+        - difficulte : Difficulte
+        - pause : Boolean
+        + Partie(difficulte : Difficulte)
+        + stopChrono() : void
+        + startChrono() : void
+        + addMalus(malusEnMillisecondes : long) : void
+        + sauvegarde() : void
+        + finPartie() : void
+        + *@Override* serialize(gen : JsonGenerator,serializers : SerializerProvider ) : void
+        + *@Override* serializeWithType(gen : JsonGenerator ,serializers: SerializerProvider , typeSer : TypeSerializer ) : void
+    }
+
+<<Enum>> Difficulte
+Partie <-- Difficulte

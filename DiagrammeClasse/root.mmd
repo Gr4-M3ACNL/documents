@@ -1,0 +1,22 @@
+classDiagram
+direction TB
+    class HashiParmentier{
+        - primaryStage : Stage
+        - mainScene : Scene
+        - selectionNiveau : Scene
+        - quitterAppli : Scene
+        - selectionProfile : Scene
+        - genererMenu : GenererAsset
+        + HashiParmentier()
+        + *@Override* start(primaryStage : Stage)
+        - creerSelectionProfil(background : BackgroundImage) : void
+        - creerSelectionNiveau(background : BackgroundImage) : void
+        - showProfileSelectionPage() : void
+        - creerProfile() : void
+        - supprimerProfile() : void
+        - loadProfile() : void
+        - startGame() : void
+        - startGame() : void
+        + lancerPartieAffichage(difficulte : Difficulte) : void
+
+    }

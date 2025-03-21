@@ -1,0 +1,11 @@
+classDiagram
+direction TB
+class ElementAide{
+        - texte : List[String]
+        - noeudsSurbrillance : List[Noeud][]
+        + ElementAide()
+        + addText(i : int, texte : String) : void
+        + addNoeud(index : int, n : Noeud) : void
+        + getTexte() : List[String]
+        + getNoeudsSurbrillance() : List[Noeud][]
+    }
