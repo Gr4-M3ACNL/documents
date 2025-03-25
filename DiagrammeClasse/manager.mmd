@@ -1,3 +1,9 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.managers
+---
+
 classDiagram
 direction TB
     class JsonManager{
@@ -64,6 +70,8 @@ direction TB
         + supprimer(difficulte : Difficulte) : void
     }
 
-    SauvegardePartieManager <-- JsonManager
-    ProfileManager <-- JsonManager
-    
+    SauvegardeManager --* OsManager
+    JsonManager --* SauvegardeManager
+    SauvegardePartieManager --o JsonManager
+    ProfileManager *--o JsonManager
+

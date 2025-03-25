@@ -1,3 +1,9 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.game.logique
+---
+
 classDiagram
 direction TB
     class Matrice{
@@ -63,6 +69,6 @@ direction TB
         + rejouer(index : int) : void
         + drawJeuTerm() : void
     }
-    Jeu <-- Matrice
-    Jeu <-- Pile
+    Jeu --* Matrice
+    Jeu --o Pile
 

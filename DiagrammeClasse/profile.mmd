@@ -1,3 +1,9 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.profile
+---
+
 classDiagram
 direction TB
     class Profile{
@@ -60,5 +66,6 @@ direction TB
     
     }
 
-    Profile <-- ParametreProfile
-    Profile <-- HistoriquePartieProfile
+    Profile --* ParametreProfile
+    Profile --* HistoriquePartieProfile
+

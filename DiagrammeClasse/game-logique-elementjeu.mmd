@@ -1,3 +1,9 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.game.logique.elementjeu
+---
+
 classDiagram
 direction TB
     class Coord {
@@ -97,9 +103,9 @@ direction TB
 
     }
 	<<Interface>> ElementJeu
-    Lien <|-- ElementJeu
-    Noeud <|-- ElementJeu
-    Lien <-- Noeud
-    DoubleLien <-- Lien
-    Noeud <-- Coord
+    Lien --|> ElementJeu
+    Noeud --|> ElementJeu
+    Lien --o Noeud
+    DoubleLien --o Lien
+    Noeud --* Coord
 
