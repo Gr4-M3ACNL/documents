@@ -1,0 +1,25 @@
+\subsection{Tests}
+Pour pouvoir s'assurer du bon fonctionnement des classes programmées, on a pensé judicieux d'implémenter des tests unitaires, pour cela nous avons utilisé Jupiter de JUnit et Mockito. Pour pouvoir mieux s'y retrouver dans les résultats des tests, on a modifié l'affichage en console comme
+\hyperlink{imgTest}{ci-dessous}.
+
+\begin{center}
+    \hypertarget{imgTest}{
+        \includegraphics[width=15cm]{../Annexe/Tests.png}
+    }
+\end{center}
+La valeur de retour des tests peut prendre 4 valeurs différentes avec les couleurs utilisées dans le terminal : 
+\begin{itemize}
+    \item \textbf{OK}
+    \item \textbf{KO}
+    \item \textbf{DÉSACTIVÉ}
+    \item \textbf{AVORTÉ}
+\end{itemize}
+
+Pour pouvoir réaliser cet affichage, on a créé une classe mère de tout les tests qui est 
+\href{https://github.com/Gr4-M3ACNL/hashi/blob/master/src/test/java/fr/m3acnl/Tests.java}{\textbf{Tests}}.
+Cette classe étend
+\href{https://github.com/Gr4-M3ACNL/hashi/blob/master/src/test/java/fr/m3acnl/VerifTest.java}{\textbf{VeirfTest}} qui exécute des fonctions selon le résultat du test, ce qui permet leur affichage.
+\\\\
+Durant le développement, on est arrivé sur des cas où les tests unitaires étaient rédigés mais la classe testée n'était pas fonctionnelle, pour cela, on peut choisir de désactiver un test pour que lors de la compilation, il soit ignoré et donc ne bloque pas le processus.
+\\\\
+Lors de la compilation, maven exécute les tests unitaires, et si par malheur un test échoue, la compilation est bloquée. Le fait d'obliger à un code fonctionnel à la compilation permet de réduire considérablement le nombre d'erreurs dans l'exécutable, ainsi que dans les branches du projet pour que les personnes reprenant le code n'aient pas à corriger les erreurs, et puissent utiliser le code de manière sereine.

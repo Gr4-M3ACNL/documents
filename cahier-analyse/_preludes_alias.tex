@@ -1,0 +1,47 @@
+% Configuration de l'épaisseur du contour
+\usepackage{contour}
+\contourlength{1pt}
+
+% Définition d'une commande pour ajouter un point blanc
+\newcommand{\wPt}{\textcolor{white}{.}}
+
+%%%%%%%%%%%%%%%
+% Informations %
+%%%%%%%%%%%%%%%
+
+%%%%%
+% Auteurs du document
+\newcommand{\auteur}{%
+    COGNARD Luka; 
+    GAUMONT Maël; 
+    LELANDAIS Clément;\\
+    MABIRE Aymeric; 
+    PESANTEZ Maëlig; 
+    PUREN Mewen;\\
+    TOUISSI Nassim;
+}
+
+%%%%%
+% Organisation des auteurs
+\newcommand{\organisation}{{M3ACNL}}
+
+% Informations sur l'université et le groupe
+\newcommand{\univ}{%
+    \textbf{
+        {\Huge \textbf{Le Mans Université}}\\
+        Licence Informatique\\
+        \textit{3ème année}\\
+        Génie Logiciel 2 - Gr4\\
+        \textbf{Cahier d'Analyse}\\
+        \vspace{1.5cm}
+        {\color{black}\rule{150pt}{3pt}}\\
+        \vspace{1.5cm}
+        {\color{white}\contour{black}\organisation}\\
+        \wPt
+    }
+}
+
+%%%%%
+% Titre et informations sur le document
+\newcommand{\titre}{HashiParmentier} % Titre du document
+\newcommand{\executable}{groupe4.jar} % Nom de l'exécutable

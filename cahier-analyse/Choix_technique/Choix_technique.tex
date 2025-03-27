@@ -1,0 +1,16 @@
+\section{Choix Techniques}  
+
+Afin de développer efficacement le jeu de Hashiwokakero, nous avons pris des décisions techniques adaptées aux exigences du projet, garantissant ainsi une implémentation robuste et performante.\\  
+
+Tout d’abord, nous avons opté pour GitHub comme plateforme de gestion de code et versionning, facilitant la collaboration, le suivi des modifications et la gestion des versions. Nous utilisons également des fonctionnalités telles que GitHub Actions, qui automatise le processus de production.\\  
+
+Pour assurer une uniformité du code et de la compilation sur les différents environnements de travail et systèmes d’exploitation, nous avons choisi Maven. Cet outil de gestion de projet et de compilation simplifie la gestion des dépendances, l’assemblage du code et la génération des artefacts, garantissant ainsi un développement plus fluide et une maintenance facilitée.\\  
+
+Afin de documenter clairement notre code source, nous avons adopté Javadoc, qui génère automatiquement une documentation à partir des commentaires Java. Cela améliore la compréhension et l’utilisation des classes et méthodes par l’équipe de développement.\\  
+
+L’intégration de Jupiter de JUnit et Mockito permet l’écriture et l’exécution de tests unitaires, assurant ainsi la fiabilité du code en détectant et en réduisant les erreurs potentielles.\\  
+
+Pour la manipulation des données au format JSON, nous avons opté pour la bibliothèque Jackson, qui permet la sérialisation et la désérialisation des objets Java en JSON, facilitant ainsi la gestion des sauvegardes et des ressources de l’application.\\  
+
+Enfin, nous avons utilisé Maven Shade pour la génération de l’application. Ce plugin permet d’intégrer les dépendances nécessaires directement dans le fichier JAR final, garantissant ainsi que les utilisateurs puissent exécuter le jeu sans avoir à installer manuellement des bibliothèques comme JavaFX, aussi connu sous le nom de FatJar.\\  
+
