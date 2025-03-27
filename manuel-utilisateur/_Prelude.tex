@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%
+% PACKAGE %
+%%%%%%%%%%%%%%%
+% Mise en page
+\usepackage{geometry} % Définition des dimensions de la page et des marges
+\usepackage{fancyhdr} % Gérer la mise en page des en-têtes et pieds de page
+\usepackage{lastpage} % Obtenir le numéro de la dernière page
+% Titres et TdM
+\usepackage{titlesec} % Modifier l'apparence des titres (section, sous-section, etc...)
+\usepackage{titletoc} % Modifier l'apparence des titres dans la table des matières
+% Typographie
+\usepackage{babel} % Obtenir la typographie en français
+\usepackage{libertine} % Change la police pour la police Libertine
+\usepackage[T1]{fontenc} % Options de typographies
+\usepackage[utf8]{inputenc} % Codage des caractères
+\usepackage{enumitem} % Styliser les listes à puces
+% Insertion
+\usepackage[pdftex]{graphicx} % Ajouter des images
+\usepackage{hyperref} % Ajouter des liens
+\usepackage{svg} % Ajouter des images vectorielles
+\usepackage{longtable} % Faire des tableaux sur plusieurs pages
+\usepackage{mdframed} % Faire une minipage sur plusieurs pages
+% Couleurs
+\usepackage{xcolor} % Ajouter de la couleur
+\definecolor{MGCinColor}{RGB}{0.0, 0.0, 0.0}
+\usepackage{colortbl} % Colorier les tableaux
+% LaTeX Programming
+\usepackage{ifthen} % Ajout des fonctions conditionnelles
+\usepackage{pgf} % Ajout de macros dynamiques
+\usepackage{pgffor} % Ajout de la boucle for
+\usepackage{etoolbox} % Ajout des conteneurs de données
+\usepackage{import} % Naviguer dans les fichiers
+
+\input{_preludes_alias}
+
+\title{\univ\\\textbf{\titre}}
+\author{\auteur}
+
+%%%%%%%%%%%%%%%
+% Mise en page %
+%%%%%%%%%%%%%%%
+\geometry{
+    %a4paper, % Change distance 'gauche'<->'droite' et distance 'haut'<->'bas'
+    %textwidth=?cm, % Change distance (8)
+    %textheight=?cm, % Change distance (7)
+    lmargin=1.5cm, rmargin=1.5cm, % Change distance 'gauche'<->'Corps', Change distance 'Corps'<->'droite'
+    tmargin=2cm, bmargin=2cm, % Change distance 'haut'<->'Corps', Change distance 'Corps'<->'bas'
+    headheight=1cm, % Change hauteur 'Entête'
+    headsep=0.5cm, % Change distance 'Entête'<->'Corps'
+    footnotesep=0.5cm, % Change distance 'Corps'<->'Pied de page'
+    footskip=0.5cm, % Change distance 'Pied de page'<->'bas'
+    marginparwidth=1cm, % Change distance (10)
+}
+%\usepackage{layout} % Ajouter la commande \layout permettant de voir la taille d'une page
+
+%%%%%
+% Définire le contenu des marges
+\pagestyle{fancy} % Mettre les options de mise en page à toutes les pages sauf la première
+\lhead{\color{MGCinColor}\organisation} % Mettre la liste des auteurs en haut à gauche
+\rhead{\color{MGCinColor}\titre} % Mettre le titre du document en haut à droite
+\rfoot{\thepage/\pageref{LastPage}} % Mettre le numéro de la page en bas à droite
+\renewcommand\headrulewidth{3pt} % Filet de séparation de l'en-tête
+\renewcommand{\headrule}{\hbox to\headwidth{\color{MGCinColor}\leaders\hrule height \headrulewidth\hfill}}
+\setlength{\headheight}{24pt}
+
+%%%%%
+% Définire l'apparence des titres (https://fr.overleaf.com/learn/latex/Sections_and_chapters#titlesec_commands)
+%   % \section
+\renewcommand{\thesection}{\Roman{section}}
+\titleformat{\section}[display]{\normalfont\LARGE\bfseries}{}{0.25cm}
+{
+    \color{MGCinColor}
+    \rule{\textwidth}{1pt}
+    \nopagebreak
+    \vspace{1ex}
+    \nopagebreak
+    \centering
+    \nopagebreak
+    \ifthenelse{\equal{\value{section}}{0}}{}{\thesection{} - }
+    \nopagebreak
+    \color{black}
+}[
+    \color{MGCinColor}
+    \nopagebreak
+    \vspace{-0.6cm}
+    \nopagebreak
+    \rule{\textwidth}{1pt}
+    \nopagebreak
+    \color{black}
+]
+\titlecontents{section}[0.25cm]{}{\contentslabel{0.75cm}}{\hspace*{0.75cm}}{\titlerule*[0.25pc]{.}\contentspage\hspace*{0.25cm}}
+%   % \subsection
+\titleformat{\subsection}{\normalfont\LARGE\bfseries\color{MGCinColor!90}}{\thesubsection{} )}{0.25cm}{}
+\titlecontents{subsection}[1.25cm]{\color{MGCinColor!80}}{\contentslabel{1.25cm}}{\hspace*{0.75cm}}{\titlerule*[0.5pc]{*}\contentspage\hspace*{1.25cm}}
+%   % \subsubsection
+\titleformat{\subsubsection}{\normalfont\Large\bfseries\color{MGCinColor!60}}{\thesubsubsection{} )}{0.25cm}{}
+\titlecontents{subsubsection}[2.25cm]{\color{MGCinColor!60}}{\contentslabel{0.75cm}}{\hspace*{0.75cm}}{\titlerule*[1pc]{-}\contentspage\hspace*{2.25cm}}
+%   % \paragraph
+\titleformat{\paragraph}[runin]{\normalfont\large\bfseries}{}{}{\underline}[ :\\]
+%   % \subparagraph
+\titleformat{\subparagraph}[runin]{\normalfont\large\bfseries}{}{}{}[ : ]
+
+%%%%%%%%%%%%%%%
+% COMPTEUR %
+%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%
+% COMMANDE %
+%%%%%%%%%%%%%%%
+\newcommand{\bouton}[1]{\fcolorbox{black}{gray!25}{#1}}
+\/*	Ajouter une nouvelle description dans un environnement `\begin{description}...\end{description}` et le transformer en lien vers l'explication d'une autre maquette
+    <bouton> : Le texte du bouton à expliquer
+    <label> : Le label (unique) de la maquette à lier
+*/
+\newcommand{\itemBouton}[2]{ \item[\hyperlink{maquette_#2}{#1} :] }
+
+%%%%%%%%%%%%%%%
+% ENVIRONMENT %
+%%%%%%%%%%%%%%%
+
+\/*	Ajouter la maquette d'une fenêtre
+	#1 : Option pour l'ajout de l'image
+	#2 : Nom de l'image (doit se trouver dans le dossier 'Annexe/Maquette' depuis la racine du projet LaTeX)
+	#3 : Le nom de l'image
+	#4 : L'identifiant de la maquette
+	Corps : Description de la fenêtre
+    ===============================================================
+    Pour le positionnement des images :
+    > $https://www.overleaf.com/learn/latex/Positioning_images_and_tables$
+*/
+\newenvironment{maquette}[4][width=5cm]{%
+    {\color{white}\rule{5cm}{0.5pt}}%
+    \subsection{#3}\nobreak%
+    \begin{figure}[ht]%
+		\centering%
+  	    \fbox{\includegraphics[#1]{../Annexe/Maquette/#2}}%
+		%\caption{ #3 }%
+		\label{maquette:#4}%
+	\end{figure}%
+    \nobreak\wPt\nobreak\\%
+    \nobreak\hypertarget{maquette_#4}{\wPt}\nobreak\\%
+    \nobreak\begin{minipage}[h]{15cm}%
+}{%
+	\end{minipage}%
+}
+%%%%%%%%%%%%%%%
+% FIN %
+%%%%%%%%%%%%%%%

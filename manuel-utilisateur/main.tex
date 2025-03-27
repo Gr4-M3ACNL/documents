@@ -1,0 +1,39 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX TS-program = pdftex
+\documentclass[french,a4paper,11pt]{article}
+\long\def\/*#1*/{}
+
+\newcommand{\HPrgbColor}{ 61, 30, 16 } % Pour changer le théme du document, il suffit de changer cette couleur RGB
+
+\input{_Prelude.tex} % Ajout de toutes les fonctionnalité du document
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+\DeclareGraphicsExtensions{.jpg,.png} % Formats d’images authorisé
+
+\begin{document}
+	% Ajout des logos de l'université
+	\begin{figure}
+            \fbox{
+		\includegraphics[scale=0.25]{Annexe/Logos/LMU-modified.png}
+		\hspace{4cm}
+		\includegraphics[scale=0.07]{Annexe/Logos/HP.png}
+		\hspace{4cm}
+		\includegraphics[scale=0.07]{Annexe/Logos/IC2-modified.png}
+            }
+	\end{figure}
+    \begin{titlingpage}
+	   \maketitle % Ajout des informations du document
+    \end{titlingpage}
+	\newpage
+ 
+    \tableofcontents
+	\newpage
+
+	\subimport{Introduction}{Introduction.tex} % Forcement premier
+	\subimport{Installation}{Installation.tex}
+	\subimport{Menus}{Menus.tex}
+	\subimport{Donnees}{Donnees.tex}
+ 
+\end{document}
