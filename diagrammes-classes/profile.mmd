@@ -1,0 +1,71 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.profile
+---
+
+classDiagram
+direction TB
+    class Profile{
+        - pseudo : String
+        - parametre : ParametreProfile
+        - historiquePartieProfile : HistoriquePartieProfile
+        + Profile(pseudo : String)
+        + *@Override* serialize(gen : JsonGenerator,serializers : SerializerProvider ) : void
+        + *@Override* serializeWithType(gen : JsonGenerator ,serializers: SerializerProvider , typeSer : TypeSerializer ) : void
+    }
+
+    class ParametreProfile{
+        - niveauAide : int
+        - volumeEffetsSonore : float
+        - effetVisuel : Boolean
+        - ParametreProfile()
+        + getNiveauAide() : int
+        + getVolumeEffetsSonore() : float
+        - getEffetVisuel() : Boolean
+        + setNiveauAide(niveauAide : int) : void
+        + setVolumeEffetSonore(voluùeEffetsSonore : flaot) : void
+        - setEffetVisuel(effetVisuel : Boolean) : void
+        + *@Override* serialize(gen : JsonGenerator,serializers : SerializerProvider ) : void
+        + *@Override* serializeWithType(gen : JsonGenerator ,serializers: SerializerProvider , typeSer : TypeSerializer ) : void
+    }
+
+    class HistoriquePartieProfile{
+        - tailleHistorique : int
+        - facile : list[Duration]
+        - moyen : list[Duration]
+        - difficile : list[Duration]
+        - expert : list[Duration]
+        - indexFacile : int
+        - indexMoyen : int
+        - indexDifficile : int
+        - indexExpert : int
+        - HistoriquePartieProfile()
+        + getFacile() : list[Duration]
+        + getMoyen() : list[Duration]
+        + getDifficile() : list[Duration]
+        + getExpert() : list[Duration]
+        + getIndexFacile() : int
+        + getIndexMoyen() : int
+        + getIndexDifficile() : int
+        + getIndexExpert() : int
+        + getTemps(difficulte : Difficulte) : list[Duration]
+        + getIndex(difficulte : Difficulte) : int
+        + getNbPartieDifficulte(difficulte : Difficulte) : int
+        - setFacile(facile : List[String]) : void
+        - setMoyen(moyen : List[String]) : void
+        - setDifficile(difficile : List[String]) : void
+        - setExpert(expert : List[String]) : void
+        - setIndexFacile(indexFacile : int) : void
+        - setIndexMoyen(indexMoyen : int) : void
+        - setIndexDifficile(indexDifficile : int) : void
+        - setIndexExpert(indexExpert : int) : void
+        - ajouterTemps(difficulte : Difficulte, temps : Duration) : void
+        + *@Override* serialize(gen : JsonGenerator,serializers : SerializerProvider ) : void
+        + *@Override* serializeWithType(gen : JsonGenerator ,serializers: SerializerProvider , typeSer : TypeSerializer ) : void
+    
+    }
+
+    Profile --* ParametreProfile
+    Profile --* HistoriquePartieProfile
+

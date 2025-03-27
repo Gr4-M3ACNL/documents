@@ -1,0 +1,77 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.managers
+---
+
+classDiagram
+direction TB
+    class JsonManager{
+        - fichierNiveau : String
+        - nomFichierProfils : String
+        - nomFichierPartie : String
+        + GrilleInfo : record[int,Double[][]]
+        + JsonManager()
+        + getGrilleInfo(difficulte : Difficulte, index : int) : GrilleInfo
+        + getNbGrilles(difficulte Difficulte) : int
+        + getListeDifficulte() : List[String]
+        - getListeProfils() : List[String]
+        - sauvegarderProfil(profile : Profile) : void
+        - chargerProfile(nom : String) : Profile
+        - supprimerProfil(nom : String) : void
+        - sauvegarderPartie(partie : Partie, nomProfil : String) : void
+        - chargerPartie(nomProfil : String, difficulte : Difficulte) : JsonNode
+        - supprimerPartie(nomProfil : String, difficulte : Difficulte) : void
+    }
+
+    class OsManager{
+        - instance : OsManager
+        - osType : OsType
+        + osType : Enum
+        - OsManager()
+        + getInstance() : OsManager
+        + getOsType() : OsType
+    }
+
+    class ProfileManager{
+        - jsonManager : JsonManager
+        - instance : ProfileManager
+        - profileActif : Profile
+        - ProfileManager()
+        + getInstance() : ProfileManager
+        + getProfileActif() : Profile
+        + setProfileActif(profile : String) : void
+        + desactiverProfileActif() : void
+        + listeProfils() : List[String]
+        + sauvegarder() : void
+        + supprimerProfil(nom : String) : void
+        + supprimerProfil(profile : Profile) : void
+        + creerProfil(nom : String) : void
+    }
+
+    class SauvegardeManager{
+        - instance : SauvegardeManager
+        - repertoireSauvegarde : Path
+        - SauvegardeManager()
+        - getInstance() : SauvegardeManager
+        - getRepertoireSauvegarde() : Path
+        - setSaveDir() : void
+        - initialiseRepertoire() : void
+    }
+
+    class SauvegardePartieManager{
+        - jsonManager : JsonManager
+        - instance : SauvegardePartieManager
+        + JeuEnCour : record[long,Jeu]
+        - SauvegardePartieManager()
+        + getInstance() : SauvegardePartieManager
+        + sauvegarde(partie : partie) : void
+        + charger(difficulte : Difficulte) : JeuEnCour
+        + supprimer(difficulte : Difficulte) : void
+    }
+
+    SauvegardeManager --* OsManager
+    JsonManager --* SauvegardeManager
+    SauvegardePartieManager --o JsonManager
+    ProfileManager *--o JsonManager
+

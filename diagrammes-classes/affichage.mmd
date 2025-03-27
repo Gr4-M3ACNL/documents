@@ -1,0 +1,29 @@
+---
+config:
+  theme: neo-dark
+title: Package m3acnl.affichage
+---
+
+classDiagram
+direction TB
+    class GenererAsset {
+	    - background : BackgroundImage
+        - backAlerte : String
+	    + GenererAsset(background : String)
+        + creerMenuQuitter(primaryStage : Stage, mainScene : Scene) : Scene
+        + creerMenuAide(primaryStage : Stage, mainScene : Scene, partie : Partie) : Scene
+        + creerMenuAide(primaryStage : Stage, mainScene : Scene) : Scene
+        + showConfirmQuitPage(primaryStage : Stage, confirmQuitScene : Scene) : void
+        + showAidePage(primaryStage : Stage, aideScene : Scene) : void
+        + showSettingsMenu(primaryStage : Stage, settingsScene : Scene) : void
+        + alerteProfile() : void
+        + demandeSortie(event : WindowEvent) : void
+        + relancerPartie() : void
+        + creerSlideshox(primaryStage : Stage , mainScene : Scene) : Scene
+        + creerButonStyle(text : String) : Button
+        + creerLabelStyle(text : String) : Label
+        + createBackground(backgroundPath String) : Background
+        + creerImageView(path : String, hauteur : double , largeur : double) : ImageView
+        + jouerSon(fichierAudio : String , volume : double) : void
+    }
+
