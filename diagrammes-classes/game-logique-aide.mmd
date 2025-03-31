@@ -3,16 +3,48 @@ config:
   theme: neo-dark
 title: Package m3acnl.game.logique.aide
 ---
-
 classDiagram
 direction TB
-class ElementAide{
-        - texte : List[String]
-        - noeudsSurbrillance : List[Noeud][]
-        + ElementAide()
-        + addText(i : int, texte : String) : void
-        + addNoeud(index : int, n : Noeud) : void
-        + getTexte() : List[String]
-        + getNoeudsSurbrillance() : List[Noeud][]
+    class ElementAide {
+	    - texte : List[String]
+	    - noeudsSurbrillance : List[Noeud][]
+	    + ElementAide()
+	    + addText(i : int, texte : String) : void
+	    + addNoeud(index : int, n : Noeud) : void
+	    + getTexte() : List[String]
+	    + getNoeudsSurbrillance() : List[Noeud][]
     }
+    class AideVoisin {
+	    - jeu : Jeu
+	    - aidesVoisins : List[AideVoisin]
+	    - zones : Map[String, List[Noeud]]
+	    + AideVoisin(matrice : Matrice, description : String, nom : String,jeu : Jeu, c : Coord)
+	    + getListeNoeud() : List[Noeud]
+	    - estValide(x : int, y : int) : boolean
+	    + trouverVoisin(noeud : Noeud) : List[Noeud]
+	    + trouverVoisinsDispo(noeud : Noeud) : List[Noeud]
+	    - ajouterVoisin(voisins : List[Noeud], x : int, y : int, dx : int, dy: int) : void
+	    + poidsRestantVoisins(noeud : Noeud)
+	    - conseil(noeud : Noeud) : String
+	    - checkLier(elem : ElementJeu, n : Noeud) : boolean
+	    - checkIsolement(noeud : Noeud) : boolean
+	    + checkzone() : void
+	    + trouverVoisinsDispoComplet(n : Noeud) : List[Noeud]
+	    + aideGlobale() : ElementAide
+	    + *@Override* afficherAide(index : int) : void
+    }
+    class Aide {
+	    # nom : String
+	    # description : String
+	    # cout : int
+	    # matrice : Matrice
+	    # coord : Coord
+	    + Aide(matrice : Matrice, nom : String, c : Coord)
+	    + afficherAide(index : int) : void
+    }
+
+	<<Abstraite>> Aide
+
+    AideVoisin --|> Aide
+    AideVoisin <-- ElementAide
 
